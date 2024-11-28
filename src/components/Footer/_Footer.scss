@@ -1,0 +1,13 @@
+.footer-container {
+    width: 100%;
+    @include flex-center;
+    background-color: $black-color;
+    flex-direction: column;
+    color: azure;
+
+    img {
+        margin-top: 10px;
+        width: 120px;
+        height: 40px;
+    }
+}

@@ -1,6 +1,6 @@
 .banner-container {
 	height: 111px;
-	background-image: url('../../assets/images/home-image.png');
+	background-image: $banner-background;
 	@include small-radius;
 	@include flex-banner;
 	@media screen and (min-width: $breakpoint-desktop) {

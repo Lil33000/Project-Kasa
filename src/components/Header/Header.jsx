@@ -14,7 +14,7 @@ export default function Header() {
 			<Link to="/about" className="nav-header_link-about">
 				A Propos
 			</Link>
-		</nav>
+		</nav> 
 		</header>
-	);
+	); 
 }

@@ -1,6 +1,6 @@
 .banner-container {
 	height: 111px;
-	background-image: $banner-background;
+	@include bkgrd($banner-background);
 	@include small-radius;
 	@include flex-banner;
 	@media screen and (min-width: $breakpoint-desktop) {

@@ -1,36 +1,43 @@
-import Arrow from "../../assets/images/arrow_back.png";
 import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import Arrow from "../../assets/images/arrow_back.png";
 
 export default function Collapse({ title, description, style }) {
-  const [toggle, setToggle] = useState(false);
-  const [heightEl, setHeightEl] = useState();
-
-  const toggleState = () => {
-    setToggle(!toggle);
-  };
-  const refHeight = useRef();
+  const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
+  const contentHeight = useRef("0px");
 
   useEffect(() => {
-    setHeightEl(`${refHeight.current.scrollHeight}px`);
+    if (contentRef.current) {
+      contentHeight.current = `${contentRef.current.scrollHeight}px`;
+    }
   }, []);
+
+  const handleToggle = () => {
+    setIsOpen((prevOpen) => !prevOpen);
+  };
 
   return (
     <div className={`collapse ${style}`}>
-      <div onClick={toggleState} className="collapse__visible">
+      <div onClick={handleToggle} className="collapse__visible">
         <h2>{title}</h2>
         <img
-          className={toggle ? "arrow rotated" : "arrow"}
+          className={isOpen ? "arrow rotated" : "arrow"}
           src={Arrow}
           alt="Arrow"
         />
       </div>
       <div
-        ref={refHeight}
-        className={toggle ? "collapse__toggle animated" : "collapse__toggle"}
-        style={{ height: toggle ? `${heightEl}` : "0px" }}
+        ref={contentRef}
+        className={isOpen ? "collapse__toggle animated" : "collapse__toggle"}
+        style={{
+          height:
+            isOpen && contentRef.current
+              ? `${contentRef.current.scrollHeight}px`
+              : "0px",
+        }}
       >
-        <p aria-hidden={toggle ? "true" : "false"}>{description}</p>
+        <p aria-hidden={!isOpen}>{description}</p>
       </div>
     </div>
   );

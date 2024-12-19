@@ -22,8 +22,7 @@ export default function LogementSheet() {
 			}
 		};
 		getData();
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	},);
     
 	const slidePics = pickedAppart && pickedAppart.pictures;
 	const tags = pickedAppart && pickedAppart.tags;
@@ -41,8 +40,8 @@ export default function LogementSheet() {
 				<Carrousel slides={slidePics} />
 				<section className="hostInfo-container">
 					<div className="title-tags-container">
-						<div className="title-container redFont">
-							<h1>{pickedAppart.title}</h1>
+						<div className="title-container ">
+							<h1 className="redFont">{pickedAppart.title}</h1>
 							<h3>{pickedAppart.location}</h3>
 						</div>
 						<div className="tags-container">

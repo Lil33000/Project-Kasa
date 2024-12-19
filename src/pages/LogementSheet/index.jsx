@@ -10,8 +10,8 @@ import axios from "axios";
 export default function LogementSheet() {
 	const params = useParams();
 	const navigate = useNavigate();
-
 	const [pickedAppart, setPickedAppart] = useState();
+
 	useEffect(() => {
 		const getData = async () => {
 			const reponce = await axios.get("/logement.json"); 
@@ -22,7 +22,9 @@ export default function LogementSheet() {
 			}
 		};
 		getData();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
+    
 	const slidePics = pickedAppart && pickedAppart.pictures;
 	const tags = pickedAppart && pickedAppart.tags;
 	const equipments = pickedAppart && pickedAppart.equipments;
@@ -52,8 +54,8 @@ export default function LogementSheet() {
 					<div className="rate-host-container">
 						<div className="host-container redFont">
 							<Host
-								hostName={pickedAppart.host.name}
-								hostPic={pickedAppart.host.picture}
+								name={pickedAppart.host.name}
+								picture={pickedAppart.host.picture}
 							/>
 						</div>
 						<div className="rate-container">

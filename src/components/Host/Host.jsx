@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
-export default function Host({ hostName, hostPic, id }) {
+export default function Host({ name, picture, id }) {
   return (
     <aside className="host-comp">
-      <div className="host-name">{hostName}</div>
+      <div className="host-name">{name}</div>
       <div className="hostPicture">
-        <img src={hostPic} alt={id} />
+        <img src={picture} alt={id} />
       </div>
     </aside>
   );
 }
 Host.propTypes = {
-  hostName: PropTypes.string.isRequired,
-  hostPic: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };

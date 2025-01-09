@@ -54,5 +54,5 @@ export default function Carrousel({ slides }) {
 }
 
 Carrousel.propTypes = {
-  slides: PropTypes.string.isRequired,
+  slides: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

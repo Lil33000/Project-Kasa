@@ -12,5 +12,5 @@ export default function Host({ name, picture, id }) {
 Host.propTypes = {
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
 };

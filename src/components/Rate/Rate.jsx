@@ -28,8 +28,5 @@ export default function Rate({ score }) {
 }
 
 Rate.propTypes = {
-  score: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string
-  ]).isRequired,
+  score: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 };

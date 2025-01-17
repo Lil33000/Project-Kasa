@@ -1,11 +1,11 @@
 .background-about {
-	height: 111px;
-	@include bkgrd($about-background);
-	@include small-radius;
-	@include flex-banner;
-	@media screen and (min-width: $breakpoint-desktop) {
-		height: 223px;
-		@include big-radius;
-		@include flex-banner;
-	}
+  height: 111px;
+  @include bkgrd($about-background);
+  @include small-radius;
+  @include flex-banner;
+  @media screen and (min-width: $breakpoint-desktop) {
+    height: 223px;
+    @include big-radius;
+    @include flex-banner;
+  }
 }
